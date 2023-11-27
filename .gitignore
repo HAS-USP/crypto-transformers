@@ -1,3 +1,5 @@
+/data/*
+!/data/
 osha_hub_100_train_test.npz
 
 # Byte-compiled / optimized / DLL files
