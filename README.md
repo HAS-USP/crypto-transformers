@@ -1,7 +1,7 @@
 # crypto-transformers
 Repositório do 4º Desafio de dados (Dataton) de moedas digitais FGV EESP, by team HAS
 ## Instalação de dependências
-Todos os scripts rodaram com Python 3.10.12 com os seguintes pacotes adicionais: numpy, pandas, scikit-learn e tensorflow
+Todos os scripts rodaram com Python 3.10.12 de uma máquina rodando wsl2 com os seguintes pacotes adicionais: numpy, pandas, scikit-learn e tensorflow
 
 Para instalar cada um, execute em seu ambiente substituindo 'package_name' pelo nome do pacote:
 ```bash
@@ -21,5 +21,5 @@ Para rodar o Transformer, execute 'Transformer.py' com o seguinte comando ou equ
 ```bash
 python3 Transformer.py
 ```
-Os resultados serão mostrados na saída padrão, e podem demorar alguns minutos.
+Os resultados serão mostrados na saída padrão, e podem demorar alguns minutos.  
 Os logs de nossos experimentos já estão na pasta 'results'.
