@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+import json
 import random
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -77,43 +79,56 @@ def Transformer(input_shape, projection_dim, num_heads, n_classes):
 
 if __name__ == '__main__':
     random_state = 12227
+    
+    file_paths_names = [
+        #('data/DOGE.npz', 'DOGE'),
+        ('data/BTC.npz', 'BTC'),
+        #('data/ETH.npz', 'ETH'),
+        #('data/LTC.npz', 'LTC'),
+        #('data/ALGO.npz', 'ALGO'),
+    ]
+    
+    print(f'\n\n4th Dataton Cryptocurrencies FGV EESP')
+    print(f'HAS Whale predictor\n\n')
+    
+    for file_path, name in file_paths_names:
+        print(f'Excuting on {name} dataset...\n')
+        tmp = np.load(file_path)
 
-    tmp = np.load('osha_hub_100_train_test.npz')
+        X_train = tmp['X_train']
+        y_train = tmp['y_train']
+        X_test = tmp['X_test']
+        y_test = tmp['y_test']
 
-    X_train = tmp['X_train']
-    y_train = tmp['y_train']
-    X_test = tmp['X_test']
-    y_test = tmp['y_test']
+        indices_to_keep = np.logical_not(np.logical_or(y_train == 6, y_train == 10))
+        X_train = X_train[indices_to_keep]
+        y_train = y_train[indices_to_keep]
 
-    indices_to_keep = np.logical_not(np.logical_or(y_train == 6, y_train == 10))
-    X_train = X_train[indices_to_keep]
-    y_train = y_train[indices_to_keep]
+        n_classes = len(np.unique(y_train))
 
-    n_classes = len(np.unique(y_train))
+        le = preprocessing.LabelBinarizer()
+        y_train = le.fit_transform(y_train)
+        y_test = le.fit_transform(y_test)
 
-    le = preprocessing.LabelBinarizer()
-    y_train = le.fit_transform(y_train)
-    y_test = le.fit_transform(y_test)
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
 
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_test = scaler.transform(X_test)
-
-    projection_dim = 128
-    num_heads = [32, 16, 8, 4]
-    transformer_units = [projection_dim * 2, projection_dim]
+        projection_dim = 128
+        num_heads = [32, 16, 8, 4]
+        transformer_units = [projection_dim * 2, projection_dim]
 
 
-    X_train = np.expand_dims(X_train, axis=1)
-    X_test = np.expand_dims(X_test, axis=1)
-    input_shape = (X_train.shape[1:])
-    model = Transformer(input_shape, projection_dim, num_heads, n_classes)
+        X_train = np.expand_dims(X_train, axis=1)
+        X_test = np.expand_dims(X_test, axis=1)
+        input_shape = (X_train.shape[1:])
+        model = Transformer(input_shape, projection_dim, num_heads, n_classes)
 
-    model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs=50, batch_size=64, verbose=2)
+        model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
+        model.fit(X_train, y_train, epochs=10, batch_size=64, verbose=2)
 
-    y_pred = model.predict(X_test)
+        y_pred = model.predict(X_test)
 
-    acc_test = accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_pred, axis=1))
+        acc_test = accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_pred, axis=1))
 
-    print('Testing Accuracy [{:.4f}]'.format(acc_test))
+        print(f'\n\nTesting Accuracy on {name}: {acc_test:.4f}\n\n')
