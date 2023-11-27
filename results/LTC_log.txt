@@ -1,0 +1,31 @@
+4th Dataton Cryptocurrencies FGV EESP
+HAS Whale predictor
+
+
+Excuting on LTC dataset...
+
+
+Epoch 1/10
+1049/1049 - 54s - loss: 0.4821 - accuracy: 0.7966 - 54s/epoch - 51ms/step
+Epoch 2/10
+1049/1049 - 45s - loss: 0.2093 - accuracy: 0.9124 - 45s/epoch - 43ms/step
+Epoch 3/10
+1049/1049 - 49s - loss: 0.1138 - accuracy: 0.9578 - 49s/epoch - 47ms/step
+Epoch 4/10
+1049/1049 - 49s - loss: 0.1055 - accuracy: 0.9636 - 49s/epoch - 47ms/step
+Epoch 5/10
+1049/1049 - 49s - loss: 0.0694 - accuracy: 0.9780 - 49s/epoch - 47ms/step
+Epoch 6/10
+1049/1049 - 48s - loss: 0.0433 - accuracy: 0.9863 - 48s/epoch - 45ms/step
+Epoch 7/10
+1049/1049 - 49s - loss: 0.0622 - accuracy: 0.9818 - 49s/epoch - 47ms/step
+Epoch 8/10
+1049/1049 - 51s - loss: 0.0573 - accuracy: 0.9834 - 51s/epoch - 49ms/step
+Epoch 9/10
+1049/1049 - 49s - loss: 0.0428 - accuracy: 0.9867 - 49s/epoch - 46ms/step
+Epoch 10/10
+1049/1049 - 47s - loss: 0.0389 - accuracy: 0.9879 - 47s/epoch - 45ms/step
+899/899 [==============================] - 8s 8ms/step
+
+
+Testing Accuracy on LTC: 0.9976

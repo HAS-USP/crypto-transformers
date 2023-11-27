@@ -1,0 +1,31 @@
+4th Dataton Cryptocurrencies FGV EESP
+HAS Whale predictor
+
+
+Excuting on DOGE dataset...
+
+
+Epoch 1/10
+227/227 - 16s - loss: 0.9065 - accuracy: 0.5941 - 16s/epoch - 72ms/step
+Epoch 2/10
+227/227 - 11s - loss: 0.6521 - accuracy: 0.6923 - 11s/epoch - 49ms/step
+Epoch 3/10
+227/227 - 11s - loss: 0.5337 - accuracy: 0.7443 - 11s/epoch - 49ms/step
+Epoch 4/10
+227/227 - 11s - loss: 0.4662 - accuracy: 0.7834 - 11s/epoch - 48ms/step
+Epoch 5/10
+227/227 - 10s - loss: 0.3833 - accuracy: 0.8171 - 10s/epoch - 45ms/step
+Epoch 6/10
+227/227 - 10s - loss: 0.3563 - accuracy: 0.8351 - 10s/epoch - 44ms/step
+Epoch 7/10
+227/227 - 11s - loss: 0.2916 - accuracy: 0.8700 - 11s/epoch - 49ms/step
+Epoch 8/10
+227/227 - 12s - loss: 0.2892 - accuracy: 0.8699 - 12s/epoch - 51ms/step
+Epoch 9/10
+227/227 - 11s - loss: 0.2815 - accuracy: 0.8773 - 11s/epoch - 49ms/step
+Epoch 10/10
+227/227 - 11s - loss: 0.2180 - accuracy: 0.9094 - 11s/epoch - 50ms/step
+195/195 [==============================] - 2s 9ms/step
+
+
+Testing Accuracy on DOGE: 0.8756
