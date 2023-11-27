@@ -12,7 +12,7 @@ Dados extraídos do banco do WHALE ALERT ([link](https://whale-alert.io/sample-d
 Para reproduzir os resultados de nossos experimentos, baixe a exata versão que utilizamos em nosso [Google Drive](https://drive.google.com/drive/folders/1OepjThUsXGqMUAGwja9RyOq2XBKhTYQp).  
 Coloque os datasets na pasta 'data' do repositório.
 
-## Executando os Experimentos
+## Executando os experimentos
 Para pré-processar os dados, execute 'preprocess_data.py' com o seguinte comando ou equivalente:
 ```bash
 python3 preprocess_data.py
@@ -22,4 +22,4 @@ Para rodar o Transformer, execute 'Transformer.py' com o seguinte comando ou equ
 python3 Transformer.py
 ```
 Os resultados serão mostrados na saída padrão, e podem demorar alguns minutos.
-Os logs de nossos experimentos já estão na pasta 'resultados'.
+Os logs de nossos experimentos já estão na pasta 'results'.
